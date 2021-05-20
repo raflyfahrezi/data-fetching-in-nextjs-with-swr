@@ -6,11 +6,14 @@ import styles from '../styles/Home.module.css'
 
 const Home = () => {
     const list = [
-        { url: 'using-useeffect', name: 'Using useEffect' },
-        { url: 'using-getstaticprops', name: 'Using getStaticProps' },
-        { url: 'using-getserversideprops', name: 'Using getServerSideProps' },
-        { url: 'using-swr', name: 'Using SWR' },
-        { url: 'using-getstaticprops+swr', name: 'Using getStaticProps + SWR' },
+        { url: '/using-useeffect', name: 'Using useEffect' },
+        { url: '/using-getstaticprops', name: 'Using getStaticProps' },
+        { url: '/using-getserversideprops', name: 'Using getServerSideProps' },
+        { url: '/using-swr', name: 'Using SWR' },
+        {
+            url: '/using-getstaticprops+swr',
+            name: 'Using getStaticProps + SWR',
+        },
     ]
 
     return (

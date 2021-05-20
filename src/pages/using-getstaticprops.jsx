@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import axios from 'axios'
 
 import { Card, Container } from '../components'
 
@@ -10,15 +10,25 @@ const usingGetstaticprops = ({ data }) => {
         <Container title='Using getStaticProps'>
             <h1 className={styles.title}>Using getStaticProps</h1>
 
-            {/* <div className={styles.cardWrapper}>
+            <div className={styles.cardWrapper}>
                 {data.map((item, index) => {
                     return (
                         <Card key={index} title={item.title} body={item.body} />
                     )
                 })}
-            </div> */}
+            </div>
         </Container>
     )
 }
 
+const getStaticProps = async () => {
+    const response = await axios.get(process.env.NEXT_PUBLIC_API_URL)
+
+    return {
+        props: { data: response.data },
+        revalidate: 1,
+    }
+}
+
 export default usingGetstaticprops
+export { getStaticProps }

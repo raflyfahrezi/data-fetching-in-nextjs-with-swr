@@ -1,3 +1,4 @@
 import Head from './head'
+import Link from './link'
 
-export { Head }
+export { Head, Link }

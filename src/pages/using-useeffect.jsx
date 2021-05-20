@@ -22,9 +22,9 @@ const usingUseEffect = () => {
             <main className={styles.main}>
                 <h1 className={styles.title}>Using UseEffect</h1>
 
-                <div>
-                    {data.length > 0 ? (
-                        data.map((item, index) => {
+                {data.length > 0 ? (
+                    <div className={styles.cardWrapper}>
+                        {data.map((item, index) => {
                             return (
                                 <Card
                                     key={index}
@@ -32,13 +32,13 @@ const usingUseEffect = () => {
                                     body={item.body}
                                 />
                             )
-                        })
-                    ) : (
-                        <div>
-                            <h2>Loading</h2>
-                        </div>
-                    )}
-                </div>
+                        })}
+                    </div>
+                ) : (
+                    <div>
+                        <h2>Loading</h2>
+                    </div>
+                )}
             </main>
 
             <footer className={styles.footer}>

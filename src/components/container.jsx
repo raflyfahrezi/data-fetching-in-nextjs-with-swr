@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 import styles from '../styles/Home.module.css'
 
-const container = ({ children }) => {
+const container = ({ children, title }) => {
     return (
         <div className={styles.container}>
-            <Head title='Using getStaticProps' />
+            <Head title={title} />
 
             <main className={styles.main}>{children}</main>
 

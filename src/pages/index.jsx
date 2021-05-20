@@ -31,6 +31,16 @@ const Home = () => {
                     )
                 })}
             </ul>
+
+            <p>
+                Source code{' '}
+                <a
+                    href='https://github.com/raflyfahrezi/data-fetching-in-nextjs-with-swr'
+                    target='_blank'
+                >
+                    here
+                </a>
+            </p>
         </Container>
     )
 }

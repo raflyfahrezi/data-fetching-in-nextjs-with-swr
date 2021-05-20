@@ -1,8 +1,18 @@
 import Image from 'next/image'
-import { Head } from '../components'
+
+import { Link, Head } from '../components'
+
 import styles from '../styles/Home.module.css'
 
 const Home = () => {
+    const list = [
+        { url: 'using-useeffect', name: 'Using useEffect' },
+        { url: 'using-getstaticprops', name: 'Using getStaticProps' },
+        { url: 'using-getserversideprops', name: 'Using getServerSideProps' },
+        { url: 'using-swr', name: 'Using SWR' },
+        { url: 'using-getstaticprops+swr', name: 'Using getStaticProps + SWR' },
+    ]
+
     return (
         <div className={styles.container}>
             <Head title='Next.js Data Fetching + SWR' />
@@ -14,11 +24,15 @@ const Home = () => {
                 </h1>
 
                 <ul>
-                    <li>Using useEffect</li>
-                    <li>Using getStaticProps</li>
-                    <li>Using getServerSideProps</li>
-                    <li>Using SWR</li>
-                    <li>Using getStaticProps + SWR</li>
+                    {list.map((item, index) => {
+                        return (
+                            <li>
+                                <Link key={index} href={item.url}>
+                                    {item.name}
+                                </Link>
+                            </li>
+                        )
+                    })}
                 </ul>
             </main>
 

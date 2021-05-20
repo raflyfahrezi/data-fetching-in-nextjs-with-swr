@@ -12,6 +12,14 @@ const Home = () => {
                     <a href='https://nextjs.org'>Next.js</a> Data Fetching +{' '}
                     <a href='https://swr.vercel.app/'>SWR</a>
                 </h1>
+
+                <ul>
+                    <li>Using useEffect</li>
+                    <li>Using getStaticProps</li>
+                    <li>Using getServerSideProps</li>
+                    <li>Using SWR</li>
+                    <li>Using getStaticProps + SWR</li>
+                </ul>
             </main>
 
             <footer className={styles.footer}>

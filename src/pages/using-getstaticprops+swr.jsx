@@ -8,9 +8,9 @@ import { Card, Container } from '../components'
 import styles from '../styles/Home.module.css'
 
 const usingGetstaticpropsSwr = ({ initialData }) => {
-    const { data } = useSWR(process.env.NEXT_PUBLIC_API_URL, fetcher, {
+    const { data } = useSWR(process.env.NEXT_PUBLIC_API_URL_2, fetcher, {
         initialData: initialData,
-        refreshInterval: 1000,
+        refreshInterval: 5000,
     })
 
     return (
@@ -18,9 +18,15 @@ const usingGetstaticpropsSwr = ({ initialData }) => {
             <h1 className={styles.title}>Using getStaticProps + SWR</h1>
 
             <div className={styles.cardWrapper}>
-                {data.map((item, index) => {
+                {data.results.map((item, index) => {
+                    const { first, last } = item.name
+
                     return (
-                        <Card key={index} title={item.title} body={item.body} />
+                        <Card
+                            key={index}
+                            title={`${first} ${last}`}
+                            body={item.email}
+                        />
                     )
                 })}
             </div>
@@ -29,7 +35,7 @@ const usingGetstaticpropsSwr = ({ initialData }) => {
 }
 
 const getStaticProps = async () => {
-    const response = await axios.get(process.env.NEXT_PUBLIC_API_URL)
+    const response = await axios.get(process.env.NEXT_PUBLIC_API_URL_2)
 
     return {
         props: { initialData: response.data },
